@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count-Down Calculator</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+    }
+    h3 {
+        color: rgba(212, 7, 144, 0.637);
+    }
+    p{
+        font-size: 50px;
+        margin: 20px 0;
+        color: rgb(173, 15, 134);
+
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        border-radius: 10px;
+        color: rgba(16, 28, 190, 0.89);
+        background-color: rgb(238, 214, 203);
+    }
+</style>
+<body>
+    <center>
+    <h3>Countdown from 10</h3>
+    <p id="counter">10</p>
+    <button onclick="startCountdown()">Start CountDown</button>
+    </center>
+    <script>
+        function startCountdown() {
+            let count = 10;
+            let counterElement = document.getElementById("counter");
+            
+            let timer = setInterval(function() {
+                count--;
+                counterElement.innerHTML = count;
+                
+                if (count <= 0) {
+                    clearInterval(timer);
+                    counterElement.innerHTML = "🎉 Time's Upp!";
+                }
+            }, 1000); // Run every 1000ms (1 second)
+        }
+    </script>
+</body>
+</html>
+    
